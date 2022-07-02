@@ -1,0 +1,24 @@
+[package]
+name = "todo-app"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "0.5.0-rc.2", features = ["json"] }
+lettre = { version = "0.10.0-rc.5", features = ["tokio1-native-tls"] }
+serde = { version = "1.0", features = ["derive"] }
+sqlx = { version = "0.5", features = [
+    "runtime-tokio-native-tls",
+    "mysql",
+    "time",
+] }
+
+#[dependencies.rocket_db_pools]
+#features = ["sqlx_mysql", "sqlx", "sqlx_macros"]
+#version = "0.1.0-rc.2"
+
+[dependencies.uuid]
+version = "1.1.2"
+features = ["v4", "fast-rng", "macro-diagnostics"]
